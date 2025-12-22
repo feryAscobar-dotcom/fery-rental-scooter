@@ -92,7 +92,51 @@
 </section>
 
 <section>
-  <h2>📅 Booking</h2>
+  <section>
+  <h2>📅 Booking Form</h2>
+
+  <div class="card">
+    <form onsubmit="sendWhatsApp(); return false;">
+      
+      <label>Full Name</label><br>
+      <input type="text" id="name" required style="width:100%;padding:8px;"><br><br>
+
+      <label>Motorbike</label><br>
+      <select id="motor" required style="width:100%;padding:8px;">
+        <option value="Honda Beat 110cc">Honda Beat 110cc - 75K/day</option>
+        <option value="Yamaha NMAX 155cc">Yamaha NMAX 155cc - 150K/day</option>
+        <option value="Yamaha CRF">Yamaha CRF - 200K/day</option>
+      </select><br><br>
+
+      <label>Rental Days</label><br>
+      <input type="number" id="days" min="1" required style="width:100%;padding:8px;"><br><br>
+
+      <label>Start Date</label><br>
+      <input type="date" id="date" required style="width:100%;padding:8px;"><br><br>
+
+      <button class="btn" type="submit">Book via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var motor = document.getElementById("motor").value;
+  var days = document.getElementById("days").value;
+  var date = document.getElementById("date").value;
+
+  var message = 
+    "Hello FERI Ascobar Rental Scooter,%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Motor: " + motor + "%0A" +
+    "Rental Days: " + days + "%0A" +
+    "Start Date: " + date;
+
+  var phone = "6285945592752";
+  window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
+}
+</script>
   <div class="card">
     <p>Book now via WhatsApp:</p>
     <a class="btn" href="https://wa.me/6285945592752" target="_blank">
